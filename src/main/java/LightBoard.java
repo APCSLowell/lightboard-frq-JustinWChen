@@ -15,7 +15,8 @@ lights = new boolean [numRows][numCols];
     for (int r = 0; r < numRows; r++){
     for (int c = 0; c < numCols; c++){
     double random = Math.random();
-      lights[r][c] = random < 0.4;
+      if (random <0.4)
+      lights[r][c] = true;
     }
     }
   }
@@ -29,12 +30,12 @@ lights = new boolean [numRows][numCols];
     /* to be implemented in part (b) */
    int numOn = 0;
    for (int i = 0; i <lights.length;i++){
-   if (lights[i][col])
+   if (lights[i][col]==true)
      numOn++;
    }
-    if (lights[row][col] && numOn%2==0)
+    if (lights[row][col] ==true  && numOn%2==0)
       return false;
-    if (!lights[row][col] && numOn%3=0)
+    if (lights[row][col] != true && numOn%3=0)
       return true; 
     return lights[row][col];
   }
