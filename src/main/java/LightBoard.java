@@ -17,6 +17,7 @@ lights = new boolean [numRows][numCols];
     double random = Math.random();
       if (random <0.4)
       lights[r][c] = true;
+      else lights[r][c] = false;
     }
     }
   }
